@@ -10,28 +10,192 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
+
+  :root{
+    --Pale-blue: hsl(225, 100%, 94%);
+    --Bright-blue: hsl(245, 75%, 52%);
+
+    --Very-pale-blue: hsl(225, 100%, 98%);
+    --Desaturated-blue: hsl(224, 23%, 55%);
+    --Dark-blue: hsl(223, 47%, 23%);
+  }
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Red Hat Display', sans-serif;
+  }
+
+  body {
+    background: url(./images/pattern-background-desktop.svg) no-repeat;
+    background-size: contain;
+    background-color: var(--Pale-blue)
+  }
+
+  .card {
+    background-color: var(--Very-pale-blue);
+    width: 380px;
+    height: 610px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 20px;
+    text-align: center;
+  }
+
+  .card>header>img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .card .body{
+    margin: 50px 46px;
+  }
+
+  .card .body .title{
+    color:var(--Dark-blue);
+    font-size: 25px;
+    font-weight: 900;
+  }
+
+  .card .body .text{
+    color: var(--Desaturated-blue);
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .card .body .priceBox{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--Very-pale-blue);
+    border-radius: 10px;
+  }
+
+  .priceBox > div > img{
+    padding: 20px 20px;
+  }
+
+  .price{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-self: center;
+    color: var(--Desaturated-blue);
+    
+  }
+  
+  .price > header{
+    display: flex;
+    color:var(--Dark-blue);
+    font-size: 15px;
+    font-weight: 900;
+
+  }
+
+  .priceText{
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .change{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-self: center;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .change >a{
+    color: var(--Bright-blue);
+  }
+
+  .btn{
+    background-color: var(--Bright-blue);
+    color: white;
+    width: -webkit-fill-available;
+    height: 40px;
+    border-radius: 10px;
+    border: 0px;
+    margin: 30px 0 20px 0px;;
+  }
+
+  .cancel{
+    color: var(--Desaturated-blue);
+    font-weight: 600;
+    font-size: smaller;
+  }
+
+  @media(max-width: 407px){
+    body{
+      background: url(./images/pattern-background-mobile.svg) no-repeat;
+      background-color: var(--Pale-blue);
+
+    }
+
+    .card {
+      width: 350px;
+    }
+
+  }
+
+
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
   </style>
 </head>
 <body>
-
-  Order Summary
-
-  You can now listen to millions of songs, audiobooks, and podcasts on any 
-  device anywhere you like!
-
-  Annual Plan
-  $59.99/year
-
-  Change
-
-  Proceed to Payment
-  Cancel Order
-  
+  <main>
+    <div class="card">
+      <header>
+        <img src="./images/illustration-hero.svg" alt="">
+      </header>
+      <div class="body">
+        <div class="title">
+          Order Summary
+        </div>
+        <div class="text">
+          You can now listen to millions of songs, audiobooks, and podcasts on any 
+          device anywhere you like!
+        </div>
+        <div class="priceBox">
+          <div>
+            <img src="./images/icon-music.svg" alt="">
+          </div>
+          
+            <div class="price">
+              <header>
+                Annual Plan
+              </header> 
+              <div class="priceText">$59.99/year</div>
+            </div> 
+            <div class="change">
+              <a href="">Change</a> 
+            </div>
+        </div>        
+        <input class="btn" type="button" value="Proceed to Payment">
+        
+        <div class="cancel">
+          Cancel Order
+        </div>          
+        </div>
+      </div>
+    </div>
+  </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/cristianlfonseca">Cristian Fonseca</a>.
   </div>
 </body>
 </html>
